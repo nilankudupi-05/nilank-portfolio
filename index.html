@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nilank Udupi — AI Product Manager</title>
+<meta name="description" content="Nilank Udupi — AI Product Manager with 6+ years building GenAI products, growing platforms to 100K MAUs, and shipping tools that cut costs by 87%.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #07070d;
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-card-hover: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(99,102,241,0.5);
+  --accent: #6366f1;
+  --accent-2: #818cf8;
+  --green: #34d399;
+  --amber: #f59e0b;
+  --rose: #f43f5e;
+  --violet: #a78bfa;
+  --emerald: #10b981;
+  --text-primary: #eeeef5;
+  --text-secondary: #8888a8;
+  --text-muted: #45455a;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', sans-serif;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --max-w: 900px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.4); border-radius: 2px; }
+
+/* ── Dot grid background ─────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Orbs ────────────────────────────────────────────────────────── */
+.orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.orb { position: absolute; border-radius: 50%; filter: blur(110px); }
+.orb-1 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(99,102,241,0.22), transparent);
+  top: -250px; left: -200px;
+  animation: drift1 20s ease-in-out infinite alternate;
+}
+.orb-2 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(129,140,248,0.18), transparent);
+  bottom: -200px; right: -150px;
+  animation: drift2 25s ease-in-out infinite alternate;
+}
+.orb-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(52,211,153,0.1), transparent);
+  top: 45%; right: 15%;
+  animation: drift3 30s ease-in-out infinite alternate;
+}
+@keyframes drift1 { to { transform: translate(80px, 100px); } }
+@keyframes drift2 { to { transform: translate(-60px, -80px); } }
+@keyframes drift3 { to { transform: translate(40px, -50px); } }
+
+/* ── Nav ─────────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 28px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(7,7,13,0.75); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text-primary); letter-spacing: -0.3px; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  font-size: 12px !important; font-weight: 600 !important;
+  color: var(--accent) !important;
+  border: 1px solid rgba(99,102,241,0.35); padding: 6px 14px; border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s !important;
+}
+.nav-cta:hover { background: rgba(99,102,241,0.1) !important; border-color: var(--accent) !important; }
+
+/* ── Layout ──────────────────────────────────────────────────────── */
+main { position: relative; z-index: 1; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+section { padding: 100px 0; }
+
+/* ── Reveal animations ───────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ── Section labels ──────────────────────────────────────────────── */
+.section-label {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+}
+.section-label::after {
+  content: ''; display: block; height: 1px; width: 40px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 38px); font-weight: 700;
+  letter-spacing: -0.035em; color: var(--text-primary); line-height: 1.1;
+  margin-bottom: 16px;
+}
+.section-sub { font-size: 16px; color: var(--text-secondary); line-height: 1.75; max-width: 580px; }
+
+/* ── Hero ────────────────────────────────────────────────────────── */
+#hero { min-height: 100vh; display: flex; align-items: center; padding: 0; }
+.hero-inner { padding-top: 56px; width: 100%; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-2);
+  background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 32px;
+  opacity: 0; animation: heroFadeUp 0.6s ease 0.2s forwards;
+}
+.badge-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulseDot 2s infinite; }
+@keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero-name {
+  font-size: clamp(52px, 9vw, 88px); font-weight: 700; letter-spacing: -0.045em;
+  line-height: 0.95; color: var(--text-primary); margin-bottom: 8px;
+  opacity: 0; animation: heroFadeUp 0.7s ease 0.35s forwards;
+}
+.hero-name-accent {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent), #4f46e5);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-tagline {
+  font-size: clamp(20px, 2.8vw, 26px); font-weight: 500; color: var(--text-secondary);
+  letter-spacing: -0.02em; margin-bottom: 22px; line-height: 1.4;
+  opacity: 0; animation: heroFadeUp 0.7s ease 0.5s forwards;
+}
+.hero-tagline strong { color: var(--text-primary); }
+.hero-desc {
+  font-size: 16px; color: var(--text-secondary); line-height: 1.8; max-width: 530px;
+  margin-bottom: 40px; opacity: 0; animation: heroFadeUp 0.7s ease 0.65s forwards;
+}
+.hero-actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  opacity: 0; animation: heroFadeUp 0.7s ease 0.8s forwards;
+}
+@keyframes heroFadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #fff; font-size: 14px; font-weight: 600;
+  padding: 13px 26px; border-radius: var(--radius-sm);
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s; letter-spacing: -0.01em;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(99,102,241,0.32); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg-card); color: var(--text-primary); font-size: 14px; font-weight: 500;
+  padding: 13px 26px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s; letter-spacing: -0.01em;
+}
+.btn-secondary:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.14); transform: translateY(-2px); }
+
+/* ── Stats strip ─────────────────────────────────────────────────── */
+.stats-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; margin-top: 64px;
+}
+.stat-item {
+  background: var(--bg); padding: 32px 24px; text-align: center;
+  position: relative; transition: background 0.25s;
+  border-left: 3px solid transparent;
+}
+.stat-item:hover { background: rgba(255,255,255,0.025); }
+.stat-item:nth-child(1) { border-color: var(--accent); }
+.stat-item:nth-child(2) { border-color: var(--green); }
+.stat-item:nth-child(3) { border-color: var(--amber); }
+.stat-item:nth-child(4) { border-color: var(--rose); }
+.stat-context {
+  font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+}
+.stat-item:nth-child(1) .stat-context { color: rgba(99,102,241,0.7); }
+.stat-item:nth-child(2) .stat-context { color: rgba(52,211,153,0.7); }
+.stat-item:nth-child(3) .stat-context { color: rgba(245,158,11,0.7); }
+.stat-item:nth-child(4) .stat-context { color: rgba(244,63,94,0.7); }
+.stat-num {
+  font-family: var(--mono); font-size: 42px; font-weight: 500;
+  line-height: 1; margin-bottom: 6px; letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #eeeef5 0%, rgba(238,238,245,0.6) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stat-item:nth-child(1) .stat-num { background: linear-gradient(135deg, var(--accent-2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-item:nth-child(2) .stat-num { background: linear-gradient(135deg, #6ee7b7, var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-item:nth-child(3) .stat-num { background: linear-gradient(135deg, #fcd34d, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-item:nth-child(4) .stat-num { background: linear-gradient(135deg, #fb7185, var(--rose)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.01em; }
+
+/* ── About ───────────────────────────────────────────────────────── */
+#about { padding-top: 80px; }
+.about-grid { display: grid; grid-template-columns: 1fr 260px; gap: 60px; align-items: start; }
+.about-body p { font-size: 16px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 22px; }
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: var(--text-primary); font-weight: 600; }
+
+.about-numbers { display: flex; flex-direction: column; gap: 0; }
+.about-num-item {
+  padding: 20px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: baseline; gap: 14px;
+}
+.about-num-item:last-child { border-bottom: none; }
+.about-num-val {
+  font-family: var(--mono); font-size: 28px; font-weight: 500;
+  letter-spacing: -0.03em; color: var(--accent-2); flex-shrink: 0; min-width: 72px;
+}
+.about-num-label { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+/* ── Experience ──────────────────────────────────────────────────── */
+#experience { border-top: 1px solid var(--border); }
+.timeline { position: relative; }
+.timeline::before {
+  content: ''; position: absolute; left: 19px; top: 12px; bottom: 12px;
+  width: 1px; background: linear-gradient(180deg, var(--accent), rgba(99,102,241,0.05));
+}
+.timeline-item {
+  display: grid; grid-template-columns: 40px 1fr; gap: 20px;
+  padding: 32px 0; border-bottom: 1px solid var(--border);
+}
+.timeline-item:last-child { border-bottom: none; }
+.tl-badge {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  position: relative; z-index: 1; border: 1px solid rgba(255,255,255,0.08);
+}
+.tl-badge-wkc { background: rgba(99,102,241,0.15); color: var(--accent-2); }
+.tl-badge-boutiq { background: rgba(167,139,250,0.12); color: var(--violet); }
+.tl-badge-default { background: rgba(52,211,153,0.1); color: var(--green); }
+.tl-badge-egalleria { background: rgba(245,158,11,0.1); color: var(--amber); }
+.tl-badge-justncase { background: rgba(244,63,94,0.1); color: var(--rose); }
+.tl-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.tl-company { font-size: 16px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; }
+.tl-role { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.tl-date { font-family: var(--mono); font-size: 11px; color: var(--text-muted); white-space: nowrap; padding-top: 4px; flex-shrink: 0; }
+.tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.tl-bullets li { font-size: 14px; color: var(--text-secondary); line-height: 1.65; padding-left: 18px; position: relative; }
+.tl-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+.tl-bullets strong { color: var(--text-primary); font-weight: 600; }
+
+/* ── Case studies ────────────────────────────────────────────────── */
+#work { border-top: 1px solid var(--border); }
+.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.case-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+.case-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.case-card.cat-ai::before { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.case-card.cat-growth::before { background: linear-gradient(90deg, var(--emerald), #6ee7b7); }
+.case-card.cat-analytics::before { background: linear-gradient(90deg, var(--violet), #c4b5fd); }
+.case-card.cat-build::before { background: linear-gradient(90deg, var(--amber), #fcd34d); }
+.case-card.cat-b2b::before { background: linear-gradient(90deg, var(--rose), #fb7185); }
+
+.case-card:hover {
+  border-color: var(--border-hover); background: var(--bg-card-hover);
+  transform: translateY(-5px); box-shadow: 0 20px 48px rgba(99,102,241,0.1);
+}
+.case-header { padding: 24px 24px 0; position: relative; }
+.case-card-icon {
+  position: absolute; top: 20px; right: 20px;
+  font-size: 22px; opacity: 0.35; pointer-events: none;
+}
+.case-company { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.case-card.cat-growth .case-company { color: var(--emerald); }
+.case-card.cat-analytics .case-company { color: var(--violet); }
+.case-card.cat-build .case-company { color: var(--amber); }
+.case-card.cat-b2b .case-company { color: var(--rose); }
+.case-title { font-size: 16px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 12px; padding-right: 32px; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 24px; margin-top: 12px; }
+.tag {
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  color: var(--text-muted); background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.04em;
+}
+.case-metrics { display: flex; flex-direction: column; gap: 7px; padding: 16px 24px; }
+.case-metric { display: flex; align-items: baseline; gap: 10px; }
+.metric-num {
+  font-family: var(--mono); font-size: 17px; font-weight: 500;
+  color: var(--accent-2); flex-shrink: 0; min-width: 54px;
+  text-shadow: 0 0 20px rgba(99,102,241,0.35);
+}
+.case-card.cat-growth .metric-num { color: var(--green); text-shadow: 0 0 20px rgba(52,211,153,0.3); }
+.case-card.cat-analytics .metric-num { color: var(--violet); text-shadow: 0 0 20px rgba(167,139,250,0.3); }
+.case-card.cat-build .metric-num { color: var(--amber); text-shadow: 0 0 20px rgba(245,158,11,0.3); }
+.case-card.cat-b2b .metric-num { color: var(--rose); text-shadow: 0 0 20px rgba(244,63,94,0.3); }
+.metric-label { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
+
+.case-divider { height: 1px; background: var(--border); margin: 0 24px; }
+.case-toggle {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 24px; cursor: pointer;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--accent); background: none; border: none; width: 100%; text-align: left;
+  transition: opacity 0.2s; user-select: none;
+}
+.case-card.cat-growth .case-toggle { color: var(--green); }
+.case-card.cat-analytics .case-toggle { color: var(--violet); }
+.case-card.cat-build .case-toggle { color: var(--amber); }
+.case-card.cat-b2b .case-toggle { color: var(--rose); }
+.case-toggle:hover { opacity: 0.75; }
+.toggle-arrow { font-size: 14px; transition: transform 0.3s ease; display: inline-block; }
+.case-toggle.open .toggle-arrow { transform: rotate(180deg); }
+.case-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.case-body.open { max-height: 700px; }
+.case-body-inner { padding: 0 24px 24px; border-top: 1px solid var(--border); padding-top: 16px; }
+.case-body-inner p { font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 12px; }
+.case-body-inner p:last-child { margin-bottom: 0; }
+.case-body-inner strong { color: var(--text-primary); font-weight: 600; }
+
+/* ── AI approach ─────────────────────────────────────────────────── */
+#ai-work { border-top: 1px solid var(--border); }
+.ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ai-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px; transition: border-color 0.25s, transform 0.25s; position: relative; overflow: hidden;
+}
+.ai-card:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-3px); }
+.ai-card-bg {
+  position: absolute; top: -20px; right: -20px; width: 100px; height: 100px;
+  border-radius: 50%; opacity: 0.05;
+}
+.ai-card:nth-child(1) .ai-card-bg { background: var(--accent); }
+.ai-card:nth-child(2) .ai-card-bg { background: var(--amber); }
+.ai-card:nth-child(3) .ai-card-bg { background: var(--green); }
+.ai-card:nth-child(4) .ai-card-bg { background: var(--violet); }
+.ai-icon { font-size: 26px; margin-bottom: 16px; display: block; }
+.ai-card-title { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; margin-bottom: 8px; }
+.ai-card-body { font-size: 14px; color: var(--text-secondary); line-height: 1.75; }
+.ai-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.ai-chip {
+  font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--accent-2);
+  background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2);
+  padding: 4px 10px; border-radius: 5px; letter-spacing: 0.02em;
+}
+
+/* ── Skills ──────────────────────────────────────────────────────── */
+#skills { border-top: 1px solid var(--border); }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.skill-group-title { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+.skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-chip {
+  font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: var(--radius-sm);
+  border: 1px solid; transition: opacity 0.2s;
+}
+.skill-chip:hover { opacity: 0.8; }
+.skill-chip-ai { color: var(--accent-2); background: rgba(99,102,241,0.07); border-color: rgba(99,102,241,0.2); }
+.skill-chip-tool { color: var(--text-secondary); background: rgba(255,255,255,0.04); border-color: var(--border); }
+.skill-chip-pm { color: var(--green); background: rgba(52,211,153,0.06); border-color: rgba(52,211,153,0.18); }
+
+/* ── Contact ─────────────────────────────────────────────────────── */
+#contact { border-top: 1px solid var(--border); padding-bottom: 120px; }
+.contact-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 60px 52px; text-align: center; position: relative; overflow: hidden;
+}
+.contact-card::before {
+  content: ''; position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+  width: 240px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.contact-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(99,102,241,0.06), transparent);
+  pointer-events: none;
+}
+.contact-title { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.035em; color: var(--text-primary); margin-bottom: 14px; position: relative; z-index: 1; }
+.contact-sub { font-size: 16px; color: var(--text-secondary); max-width: 440px; margin: 0 auto 38px; line-height: 1.75; position: relative; z-index: 1; }
+.contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; position: relative; z-index: 1; }
+.contact-meta { margin-top: 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-muted); position: relative; z-index: 1; }
+
+/* ── Footer ──────────────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--border); padding: 28px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.footer-copy { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--text-muted); transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-primary); }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+  .container { padding: 0 20px; }
+  .nav-links { display: none; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .timeline::before { display: none; }
+  .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+  .tl-badge { display: none; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .ai-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .contact-card { padding: 40px 24px; }
+  .tl-header { flex-direction: column; gap: 4px; }
+  footer { flex-direction: column; gap: 16px; text-align: center; }
+}
+@media (max-width: 480px) {
+  .stats-strip { grid-template-columns: 1fr 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .stat-num { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<nav>
+  <div class="nav-logo">nilank<span>.</span>pm</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="mailto:nilankudupi@gmail.com?subject=Reaching%20out%20%E2%80%94%20saw%20your%20PM%20portfolio" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ── Hero ──────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="badge-dot"></span>PM &middot; AI Products &middot; 6+ Years</div>
+      <h1 class="hero-name">Nilank<br><span class="hero-name-accent">Udupi</span></h1>
+      <p class="hero-tagline"><strong>I build AI products that ship</strong> and stick.</p>
+      <p class="hero-desc">PM across GenAI tooling, growth, and founding. I own roadmaps end-to-end — from prompt engineering and API cost models to production dashboards — without losing sight of the user who has to live with the result.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          View work
+        </a>
+        <a href="https://linkedin.com/in/nilank-udupi" target="_blank" rel="noopener" class="btn-secondary">
+          LinkedIn
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+        <a href="mailto:nilankudupi@gmail.com?subject=Reaching%20out%20%E2%80%94%20saw%20your%20PM%20portfolio" class="btn-secondary">nilankudupi@gmail.com</a>
+      </div>
+
+      <div class="stats-strip reveal">
+        <div class="stat-item">
+          <div class="stat-context">Experience</div>
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Years shipping products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-context">Reach</div>
+          <div class="stat-num">100K</div>
+          <div class="stat-label">MAUs on one platform</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-context">Revenue</div>
+          <div class="stat-num">$1M+</div>
+          <div class="stat-label">ARR driven in 11 months</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-context">Efficiency</div>
+          <div class="stat-num">87%</div>
+          <div class="stat-label">Max cost reduction shipped</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ──────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal">About</div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p class="reveal reveal-delay-1">
+          <strong>Ex-founder.</strong> Built eGalleria from zero to 100,000 monthly users before anyone was calling it traction. Co-founded JustNCase and grew revenue ~95% month-on-month through scrappy, cost-efficient distribution. Both companies taught me that the fastest path to product-market fit is relentless prioritisation and zero tolerance for vanity work.
+        </p>
+        <p class="reveal reveal-delay-2">
+          Then I crossed to the PM side — and brought the founder mentality with me. At GetDefault I ran four client engagements in parallel: built Zeiss a guided optical consultation tool that replaced expert dependency with pass/fail gates (consultation time ↓36%); took WizKidsCarnival from zero to 85,000 MAUs; rebuilt Elevation Capital's internal knowledge base and cut operational workload 54% through automation. At BoutiqBiz I owned three GenAI tools in production on Gemini 2.5 Flash and Veo 3.1 — wrote the prompt templates, built the API cost models, <strong>caught a 36% pricing underestimate before it hit decisions</strong>, and shipped the dashboard.
+        </p>
+        <p class="reveal reveal-delay-3">
+          I work best on products where <strong>the technical complexity is real and the user stakes are high.</strong> I don't hand off to engineering and wait — I sit in the spec, model the costs, write the prompts, and come back with something to show.
+        </p>
+      </div>
+      <div class="about-numbers reveal reveal-delay-2">
+        <div class="about-num-item">
+          <div class="about-num-val">↓87%</div>
+          <div class="about-num-label">Content creation costs cut at WizKidsCarnival via AI pipeline</div>
+        </div>
+        <div class="about-num-item">
+          <div class="about-num-val">↓36%</div>
+          <div class="about-num-label">Consultation time reduced at Zeiss with guided tool</div>
+        </div>
+        <div class="about-num-item">
+          <div class="about-num-val">↓85%</div>
+          <div class="about-num-label">Production bugs after AI dashboard shipped at BoutiqBiz</div>
+        </div>
+        <div class="about-num-item">
+          <div class="about-num-val">+80%</div>
+          <div class="about-num-label">Active users after journey redesign at WizKidsCarnival</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ──────────────────────────────────────────────────── -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label reveal">Experience</div>
+    <h2 class="section-title reveal">Where I've shipped</h2>
+
+    <div class="timeline" style="margin-top:40px;">
+
+      <!-- WizKidsCarnival -->
+      <div class="timeline-item reveal">
+        <div class="tl-badge tl-badge-wkc">W</div>
+        <div>
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">WizKidsCarnival</div>
+              <div class="tl-role">Product Management Consultant · Children's performing arts platform</div>
+            </div>
+            <div class="tl-date">Jan 2024 – Present</div>
+          </div>
+          <ul class="tl-bullets">
+            <li>Rebuilt end-to-end participant journey from discovery → registration → on-stage performance; <strong>active users +80%, platform efficiency +73%</strong></li>
+            <li>Deployed Gemini-powered AI contest pipeline using a structured policy doc as context layer; <strong>content costs ₹40K → ₹5K/month (↓87%)</strong>, 20 contests/month maintained</li>
+            <li>Built Claude API-powered internal analytics dashboard (4-tab React app): Meta spend tracking, AI-generated per-day commentary, Ask AI freeform query — <strong>zero analyst dependency for campaign decisions</strong></li>
+            <li>Designed and shipped <a href="https://showcases.wizkidscarnival.com" target="_blank" style="color:var(--accent-2);text-decoration:none;">Showcases platform</a> — live event site for Mumbai &amp; Pune performing arts events, handling real registrations in production</li>
+            <li>Automated lead qualification and WhatsApp outreach flow; drove <strong>persona-based free-to-paid conversion redesign; revenue +30%</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BoutiqBiz -->
+      <div class="timeline-item reveal">
+        <div class="tl-badge tl-badge-boutiq">B</div>
+        <div>
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">BoutiqBiz</div>
+              <div class="tl-role">Product Management Consultant · AI-powered fashion tech</div>
+            </div>
+            <div class="tl-date">Jul 2025 – Mar 2026</div>
+          </div>
+          <ul class="tl-bullets">
+            <li>Owned roadmap for three production GenAI tools — Photoshoot Gen (swatch → model image), Style Gen (outfit → editorial look), Video Gen (image → product video) — on <strong>Gemini 2.5 Flash and Veo 3.1</strong></li>
+            <li>Wrote v2 prompt templates with separation of concerns: reference images for visual description, Veo prompts for motion and camera only — eliminated a full class of hallucination bugs</li>
+            <li>Built API cost models against official Gemini API pricing; caught a <strong>~36% underestimate</strong> (Vertex AI vs Gemini API rates) before it influenced commercial decisions</li>
+            <li>Shipped two-screen AI dashboard, scoped all briefs in Jira. <strong>Production bugs ↓85%; founder firefighting time ↓70%</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GetDefault -->
+      <div class="timeline-item reveal">
+        <div class="tl-badge tl-badge-default">G</div>
+        <div>
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">GetDefault</div>
+              <div class="tl-role">Product Manager · Multi-client (Zeiss, WKC, Elevation Capital, RightLife)</div>
+            </div>
+            <div class="tl-date">Nov 2022 – Jan 2024</div>
+          </div>
+          <ul class="tl-bullets">
+            <li><strong>Zeiss:</strong> Turned an expert-dependent optical consultation process into a guided staff flow with competency checkpoints and pass/fail gates; <strong>consultation time ↓36%</strong></li>
+            <li><strong>WizKidsCarnival (early stage):</strong> Led platform from zero to <strong>85,000 MAUs</strong>; built the white-label onboarding framework later scaled to major brand partners</li>
+            <li><strong>Elevation Capital:</strong> Restructured internal knowledge base into a role-based directory; <strong>operational workload ↓54% via automation</strong></li>
+            <li><strong>RightLife:</strong> PM'd Sonde and Anura ML API integration for health diagnostics; defined requirements for surfacing AI outputs to non-technical users</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- eGalleria -->
+      <div class="timeline-item reveal">
+        <div class="tl-badge tl-badge-egalleria">e</div>
+        <div>
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">eGalleria</div>
+              <div class="tl-role">Founder & Product Owner · India's first digital exhibition platform for artists</div>
+            </div>
+            <div class="tl-date">Aug 2019 – Sep 2021</div>
+          </div>
+          <ul class="tl-bullets">
+            <li>Built and scaled India's first digital exhibition platform from zero to <strong>100,000 MAUs</strong>; digitised the exhibition submission and curation process end to end</li>
+            <li>Owned branding, growth, and product design start to finish; hit <strong>80% MoM growth at peak</strong> on a shoestring budget through cost-efficient distribution</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- JustNCase -->
+      <div class="timeline-item reveal">
+        <div class="tl-badge tl-badge-justncase">J</div>
+        <div>
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">JustNCase</div>
+              <div class="tl-role">Co-Founder & Product Manager · Custom e-commerce</div>
+            </div>
+            <div class="tl-date">Apr 2018 – Jan 2019</div>
+          </div>
+          <ul class="tl-bullets">
+            <li>Built a customised smartphone case e-commerce brand from scratch; <strong>~95% MoM revenue growth</strong> through scrappy branding, S&M, and supply chain ownership</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Case Studies ────────────────────────────────────────────────── -->
+<section id="work">
+  <div class="container">
+    <div class="section-label reveal">Case Studies</div>
+    <h2 class="section-title reveal">Selected work</h2>
+    <p class="section-sub reveal" style="margin-bottom:40px;">Six projects across AI product, growth, and platform. Each one with the decisions that actually drove the outcome — not just the metrics.</p>
+
+    <div class="cases-grid">
+
+      <!-- Card 1: BoutiqBiz AI Suite -->
+      <div class="case-card cat-ai reveal">
+        <div class="case-header">
+          <div class="case-card-icon">🎨</div>
+          <div class="case-company">BoutiqBiz</div>
+          <div class="case-title">GenAI Product Suite — Photoshoot, Style & Video</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag">Gemini 2.5 Flash</span><span class="tag">Veo 3.1</span><span class="tag">Prompt Engineering</span><span class="tag">AI Roadmap</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><span class="metric-num">↓85%</span><span class="metric-label">Production bugs after dashboard ship</span></div>
+          <div class="case-metric"><span class="metric-num">↓70%</span><span class="metric-label">Founder firefighting time</span></div>
+          <div class="case-metric"><span class="metric-num">~36%</span><span class="metric-label">API cost underestimate caught pre-launch</span></div>
+        </div>
+        <div class="case-divider"></div>
+        <button class="case-toggle" onclick="toggleCase(this)">
+          <span class="toggle-arrow">↓</span>
+          <span class="toggle-label">Read case study</span>
+        </button>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <p>The problem: BoutiqBiz had three GenAI tools in development — Photoshoot Gen (swatch → model image), Style Gen (outfit reference → editorial look), Video Gen (image → product video) — and no PM to tie them together. Each tool had separate engineering assumptions, no shared prompt discipline, and an API cost model that turned out to be wrong.</p>
+            <p>The first thing I fixed was the cost model. The team had priced against Gemini API rates; the actual invoices would come through Vertex AI. I caught the ~36% gap during a pricing review and rebuilt the model before any commercial decision got anchored to the wrong number.</p>
+            <p>On the prompt side, I wrote v2 production templates with an explicit separation of concerns: <strong>reference images handle visual description only</strong>, Veo prompts handle motion and camera behaviour only. This eliminated the class of bugs where the model tried to infer motion from a static product swatch and hallucinated camera moves that didn't match the brief.</p>
+            <p>I ran weekly engineering reviews, scoped all feature briefs in Jira, and shipped a two-screen AI dashboard. Production bugs dropped 85%. The founder stopped triaging fires daily and started working on growth.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: WKC Showcases Platform -->
+      <div class="case-card cat-growth reveal reveal-delay-1">
+        <div class="case-header">
+          <div class="case-card-icon">🎭</div>
+          <div class="case-company">WizKidsCarnival</div>
+          <div class="case-title">Showcases Platform — End-to-End Participant Journey</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag">Journey Design</span><span class="tag">Growth</span><span class="tag">Monetisation</span><span class="tag">Live Product</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><span class="metric-num">+80%</span><span class="metric-label">Active users after journey redesign</span></div>
+          <div class="case-metric"><span class="metric-num">+73%</span><span class="metric-label">Platform efficiency improvement</span></div>
+          <div class="case-metric"><span class="metric-num">+30%</span><span class="metric-label">Revenue via persona-based conversion</span></div>
+        </div>
+        <div class="case-divider"></div>
+        <button class="case-toggle" onclick="toggleCase(this)">
+          <span class="toggle-arrow">↓</span>
+          <span class="toggle-label">Read case study</span>
+        </button>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <p>The original WKC participant flow was fragmented — discovery happened on Instagram, registration in a Google Form, confirmations over WhatsApp, and performance logistics in a spreadsheet. Nothing talked to anything else. Enrolment dropped between each step and nobody knew where.</p>
+            <p>I started by mapping the full journey from first touchpoint to a child walking onto the stage. Defined enrolment rate and completion milestones as the primary KPIs. Then rebuilt the flow: a single landing page, an inline registration form, automated confirmation sequences, and an admin layer the team could actually manage.</p>
+            <p>I designed and shipped <strong>showcases.wizkidscarnival.com</strong> — live in production, serving the Mumbai and Pune events. The site handles registrations, communicates event details, and converts parent interest at a measurably higher rate than the old fragmented flow.</p>
+            <p>In parallel I ran user interviews across three parent personas and rebuilt the free-to-paid conversion journeys around their specific hesitations. Revenue grew 30% in the first cycle the new journeys ran. Active users are up 80% — and unlike the old numbers, these are tracked, not estimated.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: WKC AI Contest Pipeline -->
+      <div class="case-card cat-ai reveal">
+        <div class="case-header">
+          <div class="case-card-icon">🤖</div>
+          <div class="case-company">WizKidsCarnival</div>
+          <div class="case-title">AI Contest Automation Pipeline</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag">Gemini</span><span class="tag">Policy-Driven AI</span><span class="tag">Cost Reduction</span><span class="tag">Instructional Design</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><span class="metric-num">↓87%</span><span class="metric-label">Content costs — ₹40K → ₹5K/month</span></div>
+          <div class="case-metric"><span class="metric-num">20/mo</span><span class="metric-label">Contests published, volume maintained</span></div>
+          <div class="case-metric"><span class="metric-num">Policy-doc</span><span class="metric-label">as the AI's decision layer, not just a prompt</span></div>
+        </div>
+        <div class="case-divider"></div>
+        <button class="case-toggle" onclick="toggleCase(this)">
+          <span class="toggle-arrow">↓</span>
+          <span class="toggle-label">Read case study</span>
+        </button>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <p>WKC was spending ₹40,000/month on contest content — freelancer time, coordinator review cycles, founder edits. Output was 20 contests/month but quality was inconsistent and the process couldn't scale. Every new contest format required starting from scratch.</p>
+            <p>I applied instructional design principles before touching any AI tooling. First I defined what a good contest looks like: age-group rules, format constraints, scoring rubric structure, quality standards. This became a structured policy document — not a prompt, but a codified decision framework.</p>
+            <p>That policy doc became the context layer fed to Gemini at inference time. The model generates contest briefs, rubrics, and scoring criteria against the constraints in the doc. Because the constraints are explicit, the outputs are consistent without extensive review.</p>
+            <p>Monthly content spend dropped from ₹40K to ₹5K — an 87% reduction. We maintained 20 contests/month. <strong>The remaining cost is one hour of human review per week</strong>, not a team of freelancers. The policy doc also made it trivial to add new contest formats: update the doc, the AI adapts, no retraining required.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: WKC Analytics Dashboard -->
+      <div class="case-card cat-analytics reveal reveal-delay-1">
+        <div class="case-header">
+          <div class="case-card-icon">📊</div>
+          <div class="case-company">WizKidsCarnival · Internal Tool</div>
+          <div class="case-title">Claude-Powered Funnel Analytics Dashboard</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag">Claude API</span><span class="tag">React</span><span class="tag">Analytics</span><span class="tag">0→1 Build</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><span class="metric-num">4 tabs</span><span class="metric-label">Data Table, Sessions, Recommendations, Ask AI</span></div>
+          <div class="case-metric"><span class="metric-num">AI-gen</span><span class="metric-label">Per-day commentary + anomaly detection</span></div>
+          <div class="case-metric"><span class="metric-num">0 DB</span><span class="metric-label">No backend — CSV in, insights out instantly</span></div>
+        </div>
+        <div class="case-divider"></div>
+        <button class="case-toggle" onclick="toggleCase(this)">
+          <span class="toggle-arrow">↓</span>
+          <span class="toggle-label">Read case study</span>
+        </button>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <p>The team was tracking Meta ad spend, quiz completions, and enrolment in three separate sheets. Correlating them meant manual copy-paste every Monday. Campaign decisions were made with a week's delay on data that was already stale.</p>
+            <p>I built a Claude-powered analytics dashboard to collapse this into a single view. No database — the tool is a four-tab React app where you upload a telemetry CSV and the dashboard does the rest: parses it, computes derived metrics (CPC, CPL, CTR), and routes the full dataset to Claude for AI-generated per-day commentary.</p>
+            <p>The key engineering decision was <strong>schema fingerprinting</strong>: Claude's CSV mapping runs once per schema structure and gets cached in localStorage. Subsequent uploads of the same format skip the AI call entirely. This kept API costs flat without degrading the experience for the team.</p>
+            <p>The Ask AI tab lets any team member query funnel performance in plain English — no SQL, no analyst, no two-day wait. The Recommendations tab surfaces action/watch/anomaly items from the full funnel context. Decision-making time on campaign performance went from days to minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: PulseIQ -->
+      <div class="case-card cat-b2b reveal">
+        <div class="case-header">
+          <div class="case-card-icon">💓</div>
+          <div class="case-company">PulseIQ · B2B SaaS</div>
+          <div class="case-title">AI Customer Health Scoring & Churn Prevention</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag">LLM Summarisation</span><span class="tag">B2B SaaS</span><span class="tag">Retention</span><span class="tag">CSM Tooling</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><span class="metric-num">↓28%</span><span class="metric-label">Churn in the 0–60 day cohort</span></div>
+          <div class="case-metric"><span class="metric-num">Weekly</span><span class="metric-label">AI-generated health briefs to CSMs</span></div>
+          <div class="case-metric"><span class="metric-num">↓65%</span><span class="metric-label">Time CSMs spent pulling manual reports</span></div>
+        </div>
+        <div class="case-divider"></div>
+        <button class="case-toggle" onclick="toggleCase(this)">
+          <span class="toggle-arrow">↓</span>
+          <span class="toggle-label">Read case study</span>
+        </button>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <p>The CSM team was identifying at-risk accounts by feel. No consistent signal framework, no early warning system. By the time a risk surfaced in a support ticket or a renewal conversation, the intervention window had usually closed. I scoped and shipped a churn-risk scoring layer on top of the existing product telemetry pipeline.</p>
+            <p>The scoring model combines three signal types: feature adoption depth (breadth of modules used), recency decay (days since last meaningful session), and support ticket sentiment. These signals feed into an LLM-based summarisation layer that synthesises them into a plain-language health brief per account — one paragraph, three watch items, one recommended action.</p>
+            <p>The critical prompt engineering decision: <strong>templates were written to surface specific usage gaps, not generic risk labels.</strong> "This team onboarded to the reporting module three weeks ago and hasn't returned" is actionable. "Low engagement" is not. Every alert references the specific behaviour that triggered it.</p>
+            <p>Churn in the 0–60 day cohort — the highest-risk window — dropped 28% in the first quarter. CSMs reclaimed 65% of the time previously spent pulling manual reports and redirected it to actual customer conversations. Health brief accuracy was validated by CSM sign-off rate, not just model confidence scores.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: MeterMap -->
+      <div class="case-card cat-b2b reveal reveal-delay-1">
+        <div class="case-header">
+          <div class="case-card-icon">📐</div>
+          <div class="case-company">MeterMap · Data-Stack SaaS</div>
+          <div class="case-title">Flexible SaaS Metering & Billing Framework</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag">Monetisation</span><span class="tag">B2B SaaS</span><span class="tag">Framework Design</span><span class="tag">Pricing Strategy</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><span class="metric-num">4-tier</span><span class="metric-label">Seat, compute, API call, workflow run</span></div>
+          <div class="case-metric"><span class="metric-num">3</span><span class="metric-label">Competitors benchmarked — Snowflake, dbt, Databricks</span></div>
+          <div class="case-metric"><span class="metric-num">CSV-driven</span><span class="metric-label">Model any finance team can own and update</span></div>
+        </div>
+        <div class="case-divider"></div>
+        <button class="case-toggle" onclick="toggleCase(this)">
+          <span class="toggle-arrow">↓</span>
+          <span class="toggle-label">Read case study</span>
+        </button>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <p>The product had grown past flat-seat pricing. Heavy users were dramatically underpriced; light users were churning on sticker shock. The task was to design a metering framework flexible enough to serve both segments without requiring a full engineering rewrite every time pricing changed.</p>
+            <p>I benchmarked Snowflake (compute credits), dbt Cloud (seat + run limits), and Databricks (DBUs) to extract the underlying pricing primitives. The pattern across all three: the most durable models meter at <strong>the unit of value, not the unit of access.</strong></p>
+            <p>MeterMap defines four metric tiers — seat (access), compute (processing intensity), API call (integration depth), workflow run (automation value) — and maps each to a corresponding billing lever. The framework is exported as a CSV-driven model: finance or CS can adjust thresholds, add a metric, or model a scenario without touching code.</p>
+            <p>The framework was deliberately designed to be product-agnostic: swap the metric definitions and it applies to any SaaS product. Billing logic, escalation rules, and tier transitions are constants. This made it a reusable asset, not a one-off deliverable for a single pricing review.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── AI approach ─────────────────────────────────────────────────── -->
+<section id="ai-work">
+  <div class="container">
+    <div class="section-label reveal">AI Approach</div>
+    <h2 class="section-title reveal">How I work with AI</h2>
+    <p class="section-sub reveal" style="margin-bottom:40px;">Not "I use AI tools." I own the layer between the model and the person using the output. Here's what that looks like in practice.</p>
+
+    <div class="ai-grid">
+      <div class="ai-card reveal">
+        <div class="ai-card-bg"></div>
+        <span class="ai-icon">⚙️</span>
+        <div class="ai-card-title">Prompt engineering with discipline</div>
+        <div class="ai-card-body">I write production templates, not one-off experiments. Reference images for visual description. Motion prompts for motion behaviour. Clear separation of concerns. v2 templates exist because v1 shipped, ran in production, and taught me something the spec couldn't predict.</div>
+      </div>
+      <div class="ai-card reveal reveal-delay-1">
+        <div class="ai-card-bg"></div>
+        <span class="ai-icon">💰</span>
+        <div class="ai-card-title">Cost modelling before launch</div>
+        <div class="ai-card-body">I build API cost models against official pricing before any feature ships — token counts, inference tiers, batch vs. real-time trade-offs. I've caught underestimates that would have destroyed margins. Cost is a product decision. It belongs in the spec, not the first invoice.</div>
+      </div>
+      <div class="ai-card reveal reveal-delay-2">
+        <div class="ai-card-bg"></div>
+        <span class="ai-icon">📄</span>
+        <div class="ai-card-title">Policy documents as decision brains</div>
+        <div class="ai-card-body">Structured policy docs injected as context — not just system prompts. They encode constraints, escalation rules, output standards, and edge case handling. This is what makes AI behaviour predictable enough to trust in production — and auditable enough to improve when it's wrong.</div>
+      </div>
+      <div class="ai-card reveal reveal-delay-3">
+        <div class="ai-card-bg"></div>
+        <span class="ai-icon">🔍</span>
+        <div class="ai-card-title">Outputs that are auditable by design</div>
+        <div class="ai-card-body">Every AI output in every product I've shipped surfaces its reasoning. Health briefs cite the specific usage event. Dashboard commentary references the data it drew from. If the team can't trace an AI recommendation back to a signal, it doesn't ship — regardless of how confident the model sounds.</div>
+      </div>
+    </div>
+
+    <div class="ai-stack reveal" style="margin-top:28px;">
+      <span class="ai-chip">Gemini 2.5 Flash</span>
+      <span class="ai-chip">Veo 3.1</span>
+      <span class="ai-chip">Claude API</span>
+      <span class="ai-chip">Google AI Studio</span>
+      <span class="ai-chip">RAG design</span>
+      <span class="ai-chip">API cost modelling</span>
+      <span class="ai-chip">Prompt engineering</span>
+      <span class="ai-chip">Schema fingerprinting</span>
+      <span class="ai-chip">Policy-driven AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ──────────────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label reveal">Skills</div>
+    <h2 class="section-title reveal">Toolkit</h2>
+    <div class="skills-grid" style="margin-top:36px;">
+      <div class="reveal">
+        <div class="skill-group-title">AI & Prompting</div>
+        <div class="skill-chips">
+          <span class="skill-chip skill-chip-ai">Prompt Engineering</span>
+          <span class="skill-chip skill-chip-ai">Gemini 2.5 Flash</span>
+          <span class="skill-chip skill-chip-ai">Veo 3.1</span>
+          <span class="skill-chip skill-chip-ai">Claude API</span>
+          <span class="skill-chip skill-chip-ai">RAG Design</span>
+          <span class="skill-chip skill-chip-ai">API Cost Modelling</span>
+          <span class="skill-chip skill-chip-ai">Google AI Studio</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="skill-group-title">PM Tooling</div>
+        <div class="skill-chips">
+          <span class="skill-chip skill-chip-tool">Figma</span>
+          <span class="skill-chip skill-chip-tool">Jira</span>
+          <span class="skill-chip skill-chip-tool">Mixpanel</span>
+          <span class="skill-chip skill-chip-tool">Miro</span>
+          <span class="skill-chip skill-chip-tool">Notion</span>
+          <span class="skill-chip skill-chip-tool">Replit</span>
+          <span class="skill-chip skill-chip-tool">Adobe XD</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="skill-group-title">Core PM</div>
+        <div class="skill-chips">
+          <span class="skill-chip skill-chip-pm">Roadmap Ownership</span>
+          <span class="skill-chip skill-chip-pm">0→1 Builds</span>
+          <span class="skill-chip skill-chip-pm">KPI Definition</span>
+          <span class="skill-chip skill-chip-pm">Cross-functional Delivery</span>
+          <span class="skill-chip skill-chip-pm">Agile / Scrum</span>
+          <span class="skill-chip skill-chip-pm">User Research</span>
+          <span class="skill-chip skill-chip-pm">Monetisation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-title">Let's build something that matters</div>
+      <p class="contact-sub">If you're working on a hard AI product problem — or looking for someone who can own it end-to-end without hand-holding — I'd like to hear about it.</p>
+      <div class="contact-actions">
+        <a href="mailto:nilankudupi@gmail.com?subject=Reaching%20out%20%E2%80%94%20saw%20your%20PM%20portfolio" class="btn-primary">
+          Send me a note
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/nilank-udupi" target="_blank" rel="noopener" class="btn-secondary">
+          LinkedIn
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="contact-meta">Based in Goa, India &middot; Open to relocating &middot; nilankudupi@gmail.com</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 Nilank Udupi</div>
+  <div class="footer-links">
+    <a href="mailto:nilankudupi@gmail.com?subject=Reaching%20out%20%E2%80%94%20saw%20your%20PM%20portfolio">Email</a>
+    <a href="https://linkedin.com/in/nilank-udupi" target="_blank">LinkedIn</a>
+    <a href="#hero">Back to top</a>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ────────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Case study toggle (clean, no childNode manipulation) ─────────
+function toggleCase(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+
+  // Close all open cards
+  document.querySelectorAll('.case-body.open').forEach(b => {
+    b.classList.remove('open');
+    const t = b.previousElementSibling;
+    t.classList.remove('open');
+    t.querySelector('.toggle-arrow').textContent = '↓';
+  });
+
+  if (!isOpen) {
+    body.classList.add('open');
+    btn.classList.add('open');
+    btn.querySelector('.toggle-arrow').textContent = '↑';
+  }
+}
+</script>
+
+</body>
+</html>
