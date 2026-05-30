@@ -284,6 +284,68 @@ section { padding: 100px 0; }
 #work { border-top: 1px solid var(--border); }
 .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
+/* Visual header zone */
+.case-visual {
+  height: 130px; position: relative; overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+  flex-shrink: 0;
+}
+.case-visual-inner {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+/* AI pattern — animated gradient mesh */
+.case-visual.vis-ai { background: linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(67,56,202,0.08) 50%, rgba(129,140,248,0.14) 100%); }
+.case-visual.vis-ai::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(0deg, rgba(99,102,241,0.06) 0px, transparent 1px, transparent 18px),
+                    repeating-linear-gradient(90deg, rgba(99,102,241,0.06) 0px, transparent 1px, transparent 18px);
+}
+.case-visual.vis-ai::after {
+  content: ''; position: absolute; width: 140px; height: 140px;
+  background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 70%);
+  top: -30px; right: -20px; animation: visFloat 6s ease-in-out infinite alternate;
+}
+/* Growth pattern — bar chart shapes */
+.case-visual.vis-growth { background: linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(6,78,59,0.06) 100%); }
+.case-visual.vis-growth::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(52,211,153,0.2), transparent 50%);
+}
+/* Analytics pattern — data grid */
+.case-visual.vis-analytics { background: linear-gradient(135deg, rgba(167,139,250,0.14) 0%, rgba(99,102,241,0.06) 100%); }
+.case-visual.vis-analytics::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(167,139,250,0.07) 0px, transparent 1px, transparent 32px),
+                    repeating-linear-gradient(0deg, rgba(167,139,250,0.07) 0px, transparent 1px, transparent 20px);
+}
+.case-visual.vis-analytics::after {
+  content: ''; position: absolute; width: 160px; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.6), transparent);
+  top: 50%; left: 0; right: 0;
+  box-shadow: 0 -20px 0 rgba(167,139,250,0.2), 0 20px 0 rgba(167,139,250,0.1);
+}
+@keyframes visFloat { to { transform: translate(10px, 10px); } }
+.case-visual-icon { font-size: 36px; position: relative; z-index: 1; opacity: 0.7; }
+/* Bar chart SVG shapes for growth card */
+.vis-bars {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: 8px; padding: 0 24px; height: 100%; z-index: 1;
+}
+.vis-bar {
+  border-radius: 3px 3px 0 0; width: 20px; opacity: 0.25;
+  background: var(--green);
+}
+.vis-bar:nth-child(1) { height: 35%; }
+.vis-bar:nth-child(2) { height: 50%; }
+.vis-bar:nth-child(3) { height: 42%; }
+.vis-bar:nth-child(4) { height: 65%; }
+.vis-bar:nth-child(5) { height: 58%; }
+.vis-bar:nth-child(6) { height: 80%; }
+.vis-bar:nth-child(7) { height: 72%; }
+.vis-bar:nth-child(8) { height: 90%; }
+
 .case-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
   overflow: hidden; transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
@@ -353,6 +415,36 @@ section { padding: 100px 0; }
 .case-body-inner p { font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 12px; }
 .case-body-inner p:last-child { margin-bottom: 0; }
 .case-body-inner strong { color: var(--text-primary); font-weight: 600; }
+
+/* ── Testimonials ────────────────────────────────────────────────── */
+#testimonials { border-top: 1px solid var(--border); }
+.testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.testimonial-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 32px; position: relative; transition: border-color 0.25s, transform 0.25s;
+}
+.testimonial-card:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-3px); }
+.testimonial-quote-mark {
+  font-family: Georgia, serif; font-size: 64px; line-height: 1; color: var(--accent);
+  opacity: 0.25; position: absolute; top: 16px; left: 24px; pointer-events: none;
+}
+.testimonial-text {
+  font-size: 15px; line-height: 1.8; color: var(--text-secondary);
+  margin-top: 20px; font-style: italic;
+}
+.testimonial-text strong { color: var(--text-primary); font-style: normal; }
+.testimonial-person {
+  display: flex; align-items: center; gap: 14px; margin-top: 24px;
+  padding-top: 20px; border-top: 1px solid var(--border);
+}
+.testimonial-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 14px; font-weight: 700; flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.testimonial-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.testimonial-role { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
 /* ── AI approach ─────────────────────────────────────────────────── */
 #ai-work { border-top: 1px solid var(--border); }
@@ -473,7 +565,7 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-badge"><span class="badge-dot"></span>PM &middot; AI Products &middot; 6+ Years</div>
+      <div class="hero-badge"><span class="badge-dot"></span>PM &middot; AI Products &middot; 6+ Years &middot; Open to relocating</div>
       <h1 class="hero-name">Nilank<br><span class="hero-name-accent">Udupi</span></h1>
       <p class="hero-tagline"><strong>I build AI products that ship</strong> and stick.</p>
       <p class="hero-desc">PM across GenAI tooling, growth, and founding. I own roadmaps end-to-end — from prompt engineering and API cost models to production dashboards — without losing sight of the user who has to live with the result.</p>
@@ -671,9 +763,12 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
     <div class="cases-grid">
 
       <!-- Card 1: BoutiqBiz AI Suite -->
-      <div class="case-card cat-ai reveal">
+      <div class="case-card cat-ai reveal" style="padding-top:0;">
+        <div class="case-visual vis-ai">
+          <div class="case-visual-inner"><span class="case-visual-icon">🎨</span></div>
+        </div>
         <div class="case-header">
-          <div class="case-card-icon">🎨</div>
+          <div class="case-card-icon" style="display:none;">🎨</div>
           <div class="case-company">BoutiqBiz</div>
           <div class="case-title">GenAI Product Suite — Photoshoot, Style & Video</div>
         </div>
@@ -701,9 +796,19 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
       </div>
 
       <!-- Card 2: WKC Showcases Platform -->
-      <div class="case-card cat-growth reveal reveal-delay-1">
+      <div class="case-card cat-growth reveal reveal-delay-1" style="padding-top:0;">
+        <div class="case-visual vis-growth">
+          <div class="case-visual-inner">
+            <div class="vis-bars">
+              <div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div>
+              <div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div>
+              <div class="vis-bar"></div><div class="vis-bar"></div>
+            </div>
+            <span class="case-visual-icon" style="position:absolute;top:16px;right:20px;font-size:28px;opacity:0.5;">🎭</span>
+          </div>
+        </div>
         <div class="case-header">
-          <div class="case-card-icon">🎭</div>
+          <div class="case-card-icon" style="display:none;">🎭</div>
           <div class="case-company">WizKidsCarnival</div>
           <div class="case-title">Showcases Platform — End-to-End Participant Journey</div>
         </div>
@@ -731,9 +836,12 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
       </div>
 
       <!-- Card 3: WKC AI Contest Pipeline -->
-      <div class="case-card cat-ai reveal">
+      <div class="case-card cat-ai reveal" style="padding-top:0;">
+        <div class="case-visual vis-ai">
+          <div class="case-visual-inner"><span class="case-visual-icon">🤖</span></div>
+        </div>
         <div class="case-header">
-          <div class="case-card-icon">🤖</div>
+          <div class="case-card-icon" style="display:none;">🤖</div>
           <div class="case-company">WizKidsCarnival</div>
           <div class="case-title">AI Contest Automation Pipeline</div>
         </div>
@@ -761,9 +869,12 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
       </div>
 
       <!-- Card 4: WKC Analytics Dashboard -->
-      <div class="case-card cat-analytics reveal reveal-delay-1">
+      <div class="case-card cat-analytics reveal reveal-delay-1" style="padding-top:0;">
+        <div class="case-visual vis-analytics">
+          <div class="case-visual-inner"><span class="case-visual-icon">📊</span></div>
+        </div>
         <div class="case-header">
-          <div class="case-card-icon">📊</div>
+          <div class="case-card-icon" style="display:none;">📊</div>
           <div class="case-company">WizKidsCarnival · Internal Tool</div>
           <div class="case-title">Claude-Powered Funnel Analytics Dashboard</div>
         </div>
@@ -790,67 +901,53 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
         </div>
       </div>
 
-      <!-- Card 5: PulseIQ -->
-      <div class="case-card cat-b2b reveal">
-        <div class="case-header">
-          <div class="case-card-icon">💓</div>
-          <div class="case-company">PulseIQ · B2B SaaS</div>
-          <div class="case-title">AI Customer Health Scoring & Churn Prevention</div>
-        </div>
-        <div class="case-tags">
-          <span class="tag">LLM Summarisation</span><span class="tag">B2B SaaS</span><span class="tag">Retention</span><span class="tag">CSM Tooling</span>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric"><span class="metric-num">↓28%</span><span class="metric-label">Churn in the 0–60 day cohort</span></div>
-          <div class="case-metric"><span class="metric-num">Weekly</span><span class="metric-label">AI-generated health briefs to CSMs</span></div>
-          <div class="case-metric"><span class="metric-num">↓65%</span><span class="metric-label">Time CSMs spent pulling manual reports</span></div>
-        </div>
-        <div class="case-divider"></div>
-        <button class="case-toggle" onclick="toggleCase(this)">
-          <span class="toggle-arrow">↓</span>
-          <span class="toggle-label">Read case study</span>
-        </button>
-        <div class="case-body">
-          <div class="case-body-inner">
-            <p>The CSM team was identifying at-risk accounts by feel. No consistent signal framework, no early warning system. By the time a risk surfaced in a support ticket or a renewal conversation, the intervention window had usually closed. I scoped and shipped a churn-risk scoring layer on top of the existing product telemetry pipeline.</p>
-            <p>The scoring model combines three signal types: feature adoption depth (breadth of modules used), recency decay (days since last meaningful session), and support ticket sentiment. These signals feed into an LLM-based summarisation layer that synthesises them into a plain-language health brief per account — one paragraph, three watch items, one recommended action.</p>
-            <p>The critical prompt engineering decision: <strong>templates were written to surface specific usage gaps, not generic risk labels.</strong> "This team onboarded to the reporting module three weeks ago and hasn't returned" is actionable. "Low engagement" is not. Every alert references the specific behaviour that triggered it.</p>
-            <p>Churn in the 0–60 day cohort — the highest-risk window — dropped 28% in the first quarter. CSMs reclaimed 65% of the time previously spent pulling manual reports and redirected it to actual customer conversations. Health brief accuracy was validated by CSM sign-off rate, not just model confidence scores.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ───────────────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label reveal">What They Say</div>
+    <h2 class="section-title reveal">From the people I've worked with</h2>
+
+    <div class="testimonials-grid" style="margin-top:40px;">
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">
+          <!-- Replace with real LinkedIn recommendation text -->
+          Nilank is the kind of PM who <strong>owns the outcome, not just the deliverable.</strong> He took our WKC platform from a rough idea to a live product with 85K users — and did it while managing four other clients. He doesn't wait to be told what to build next. He figures it out, aligns the team, and ships.
+        </p>
+        <div class="testimonial-person">
+          <div class="testimonial-avatar" style="background:rgba(99,102,241,0.12);color:var(--accent-2);">A</div>
+          <div>
+            <div class="testimonial-name">— Placeholder Name</div>
+            <div class="testimonial-role">Founder · WizKidsCarnival</div>
           </div>
         </div>
       </div>
 
-      <!-- Card 6: MeterMap -->
-      <div class="case-card cat-b2b reveal reveal-delay-1">
-        <div class="case-header">
-          <div class="case-card-icon">📐</div>
-          <div class="case-company">MeterMap · Data-Stack SaaS</div>
-          <div class="case-title">Flexible SaaS Metering & Billing Framework</div>
-        </div>
-        <div class="case-tags">
-          <span class="tag">Monetisation</span><span class="tag">B2B SaaS</span><span class="tag">Framework Design</span><span class="tag">Pricing Strategy</span>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric"><span class="metric-num">4-tier</span><span class="metric-label">Seat, compute, API call, workflow run</span></div>
-          <div class="case-metric"><span class="metric-num">3</span><span class="metric-label">Competitors benchmarked — Snowflake, dbt, Databricks</span></div>
-          <div class="case-metric"><span class="metric-num">CSV-driven</span><span class="metric-label">Model any finance team can own and update</span></div>
-        </div>
-        <div class="case-divider"></div>
-        <button class="case-toggle" onclick="toggleCase(this)">
-          <span class="toggle-arrow">↓</span>
-          <span class="toggle-label">Read case study</span>
-        </button>
-        <div class="case-body">
-          <div class="case-body-inner">
-            <p>The product had grown past flat-seat pricing. Heavy users were dramatically underpriced; light users were churning on sticker shock. The task was to design a metering framework flexible enough to serve both segments without requiring a full engineering rewrite every time pricing changed.</p>
-            <p>I benchmarked Snowflake (compute credits), dbt Cloud (seat + run limits), and Databricks (DBUs) to extract the underlying pricing primitives. The pattern across all three: the most durable models meter at <strong>the unit of value, not the unit of access.</strong></p>
-            <p>MeterMap defines four metric tiers — seat (access), compute (processing intensity), API call (integration depth), workflow run (automation value) — and maps each to a corresponding billing lever. The framework is exported as a CSV-driven model: finance or CS can adjust thresholds, add a metric, or model a scenario without touching code.</p>
-            <p>The framework was deliberately designed to be product-agnostic: swap the metric definitions and it applies to any SaaS product. Billing logic, escalation rules, and tier transitions are constants. This made it a reusable asset, not a one-off deliverable for a single pricing review.</p>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">
+          <!-- Replace with real LinkedIn recommendation text -->
+          What sets Nilank apart is that he <strong>speaks engineering and speaks business equally fluently.</strong> He caught a significant API cost model error before it influenced our pricing — that alone paid for months of consulting. The AI dashboard he spec'd and shipped gave us decision-making speed we didn't have before.
+        </p>
+        <div class="testimonial-person">
+          <div class="testimonial-avatar" style="background:rgba(167,139,250,0.12);color:var(--violet);">B</div>
+          <div>
+            <div class="testimonial-name">— Placeholder Name</div>
+            <div class="testimonial-role">Founder · BoutiqBiz</div>
           </div>
         </div>
       </div>
 
     </div>
+
+    <p class="reveal" style="margin-top:20px;font-family:var(--mono);font-size:11px;color:var(--text-muted);letter-spacing:0.06em;">
+      ↑ Real testimonials being added — placeholder text above
+    </p>
   </div>
 </section>
 
@@ -952,19 +1049,18 @@ footer { border-top: 1px solid var(--border); padding: 28px; display: flex; alig
 <section id="contact">
   <div class="container">
     <div class="contact-card reveal">
-      <div class="contact-title">Let's build something that matters</div>
-      <p class="contact-sub">If you're working on a hard AI product problem — or looking for someone who can own it end-to-end without hand-holding — I'd like to hear about it.</p>
+      <div class="contact-title">Hiring or exploring a build?</div>
+      <p class="contact-sub">If you're working on a hard AI product problem — or looking for someone who can own it end-to-end — let's talk. I typically respond within 24 hours.</p>
       <div class="contact-actions">
-        <a href="mailto:nilankudupi@gmail.com?subject=Reaching%20out%20%E2%80%94%20saw%20your%20PM%20portfolio" class="btn-primary">
-          Send me a note
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="BOOKING_URL" target="_blank" rel="noopener" class="btn-primary" id="booking-btn">
+          Book 30 mins
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         </a>
-        <a href="https://linkedin.com/in/nilank-udupi" target="_blank" rel="noopener" class="btn-secondary">
-          LinkedIn
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <a href="mailto:nilankudupi@gmail.com?subject=Reaching%20out%20%E2%80%94%20saw%20your%20PM%20portfolio" class="btn-secondary">
+          Or drop an email
         </a>
       </div>
-      <div class="contact-meta">Based in Goa, India &middot; Open to relocating &middot; nilankudupi@gmail.com</div>
+      <div class="contact-meta">Goa, India &middot; Open to relocating globally &middot; nilankudupi@gmail.com</div>
     </div>
   </div>
 </section>
